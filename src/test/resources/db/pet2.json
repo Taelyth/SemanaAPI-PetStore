@@ -6,7 +6,7 @@
   },
   "name": "Snoopy",
   "photoUrls": [
-    "https://upload.wikimedia.org/wikipedia/pt/thumb/5/53/Snoopy_Peanuts.png/200px-Snoopy_Peanuts.png"
+    "200px-Snoopy_Peanuts.png"
   ],
   "tags": [
     {
@@ -14,5 +14,5 @@
       "name": "SemanaAPI"
     }
   ],
-  "status": "available"
+  "status": "sold"
 }

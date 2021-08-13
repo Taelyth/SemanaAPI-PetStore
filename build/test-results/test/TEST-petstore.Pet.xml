@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="petstore.Pet" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-12T01:27:39" hostname="JAQUE-PC" time="2.045">
+<testsuite name="petstore.Pet" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-13T00:58:53" hostname="JAQUE-PC" time="2.179">
   <properties/>
-  <testcase name="incluirPet" classname="petstore.Pet" time="2.045"/>
-  <system-out><![CDATA[Request method:	POST
-Request URI:	https://petstore.swagger.io/v2/pet
+  <testcase name="excluirPet" classname="petstore.Pet" time="2.179"/>
+  <system-out><![CDATA[Request method:	DELETE
+Request URI:	https://petstore.swagger.io/v2/pet/458712
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
@@ -13,27 +13,9 @@ Headers:		Accept=*/*
 				Content-Type=application/json
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-    "id": 0,
-    "category": {
-        "id": 1,
-        "name": "dog"
-    },
-    "name": "Snoopy",
-    "photoUrls": [
-        "https://upload.wikimedia.org/wikipedia/pt/thumb/5/53/Snoopy_Peanuts.png/200px-Snoopy_Peanuts.png"
-    ],
-    "tags": [
-        {
-            "id": 2021,
-            "name": "SemanaAPI"
-        }
-    ],
-    "status": "available"
-}
+Body:			<none>
 HTTP/1.1 200 OK
-Date: Thu, 12 Aug 2021 01:27:41 GMT
+Date: Fri, 13 Aug 2021 00:58:54 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -43,22 +25,9 @@ Access-Control-Allow-Headers: Content-Type, api_key, Authorization
 Server: Jetty(9.2.9.v20150224)
 
 {
-    "id": 9223372000001117900,
-    "category": {
-        "id": 1,
-        "name": "dog"
-    },
-    "name": "Snoopy",
-    "photoUrls": [
-        "https://upload.wikimedia.org/wikipedia/pt/thumb/5/53/Snoopy_Peanuts.png/200px-Snoopy_Peanuts.png"
-    ],
-    "tags": [
-        {
-            "id": 2021,
-            "name": "SemanaAPI"
-        }
-    ],
-    "status": "available"
+    "code": 200,
+    "type": "unknown",
+    "message": "458712"
 }
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
