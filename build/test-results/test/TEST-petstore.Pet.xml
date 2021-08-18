@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="petstore.Pet" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-13T00:58:53" hostname="JAQUE-PC" time="2.179">
+<testsuite name="petstore.Pet" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-18T15:24:28" hostname="JAQUE-PC" time="2.287">
   <properties/>
-  <testcase name="excluirPet" classname="petstore.Pet" time="2.179"/>
+  <testcase name="excluirPet" classname="petstore.Pet" time="2.287"/>
   <system-out><![CDATA[Request method:	DELETE
 Request URI:	https://petstore.swagger.io/v2/pet/458712
 Proxy:			<none>
@@ -15,7 +15,7 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Fri, 13 Aug 2021 00:58:54 GMT
+Date: Wed, 18 Aug 2021 15:24:30 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
