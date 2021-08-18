@@ -1,0 +1,18 @@
+{
+  "id": 458712,
+  "category": {
+    "id": 1,
+    "name": "dog"
+  },
+  "name": "Snoopy",
+  "photoUrls": [
+    "200px-Snoopy_Peanuts.png"
+  ],
+  "tags": [
+    {
+      "id": 2021,
+      "name": "SemanaAPI"
+    }
+  ],
+  "status": "sold"
+}

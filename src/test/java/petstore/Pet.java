@@ -74,6 +74,7 @@ public class Pet {
         given()
                 .contentType("application/json")
                 .log().all()
+                .body(jsonBody)
         .when()
                 .put(uri)
         .then()
@@ -99,6 +100,7 @@ public class Pet {
                 .body("message", is(petId))
                 ;
     }
+
 
 
 }
