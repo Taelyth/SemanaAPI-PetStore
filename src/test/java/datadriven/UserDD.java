@@ -1,10 +1,9 @@
 package datadriven;
 
-//import org.testng.annotations.BeforeMethod;
 import org.json.JSONObject;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-//import utils.Data;
+import org.testng.annotations.*;
+import utils.Data;
+import utils.Log;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,7 +18,10 @@ import static org.hamcrest.Matchers.is;
 public class UserDD {
 
     String uri = "https://petstore.swagger.io/v2/user";
-    //Data data; //objeto que representa a classe utils.Data
+    Data data; //objeto que representa a classe utils.Data
+
+    short contador = 0; //contar o número de testes realizados
+    int soma; //somar valores dos registros
 
     @DataProvider //provedor de dados para os testes
     public Iterator<Object[]> provider() throws IOException {
@@ -42,13 +44,19 @@ public class UserDD {
         return testCases.iterator();
     }
 
-    /*
-    @BeforeMethod
-    public void setup()
-    {
+    @BeforeClass //rodar antes da classe de teste (se for BeforeMethod é antes do Método)
+    public void setup() throws IOException {
         data = new Data();
+        Log.iniciarLog();
     }
-    */
+
+    @AfterClass
+    public void contadorDeTestes()
+    {
+        System.out.println("Esse eh o total de testes: " + contador);
+        System.out.println("Soma dos IDs = " + soma);
+    }
+
 
     @Test(dataProvider = "provider")
     public void incluirUsuario(String id,
@@ -60,8 +68,9 @@ public class UserDD {
                                String phone,
                                String userStatus)
     {
+
         String jsonBody = new JSONObject()
-                .put("id", id)
+                .put("id", id) //um put pra cada linha do json
                 .put("username", username)
                 .put("firstName", firstName)
                 .put("lastName", lastName)
@@ -69,7 +78,7 @@ public class UserDD {
                 .put("password", password)
                 .put("phone", phone)
                 .put("userStatus", userStatus)
-                .toString();
+                .toString(); //adiciona na String jsonBody
 
         String userID =
                 given()
@@ -87,11 +96,14 @@ public class UserDD {
                         .path("message");
 
         System.out.println("O userID eh: " + userID);
+        contador += 1; // somar +1 no contador
+        System.out.println("Este eh o teste numero: " + contador);
+        soma = soma + Integer.parseInt(id);
     }
 
-    /*
+
     @Test
-    public void incluirUsuario() throws IOException {
+    public void incluirUsuarioUnico() throws IOException {
         String jsonBody = data.lerJson("src/test/resources/db/user1.json");
 
         String userID =
@@ -111,5 +123,5 @@ public class UserDD {
 
         System.out.println("O userID eh: " + userID);
     }
-    */
+
 }
